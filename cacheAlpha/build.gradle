@@ -59,14 +59,13 @@ dependencies {
 
 afterEvaluate {
     publishing {
-        publications{
-            release(MavenPublication){
-
-                from components.release
-
+        publications {
+            maven(MavenPublication) {
                 groupId = 'com.github.crisanbe'
                 artifactId = 'cachealpha'
                 version = '1.0'
+
+                from components.release
             }
         }
     }
