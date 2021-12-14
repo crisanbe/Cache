@@ -6,6 +6,7 @@ import com.cvelez.cachealpha.cache.data.local.CoreCacheDao
 import com.cvelez.cachealpha.cache.data.local.CacheDatabase
 import com.cvelez.cachealpha.cache.data.repository.CoreCacheRepositoryImpl
 import com.cvelez.cachealpha.cache.domain.repository.CoreCacheRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,7 +30,7 @@ object CoreCacheModule {
         return db.cacheDao()
     }
 
-    @Provides
+    @Binds
     @Singleton
     fun provideCacheRepository(db: CacheDatabase): CoreCacheRepository {
         return CoreCacheRepositoryImpl(db.cacheDao())
