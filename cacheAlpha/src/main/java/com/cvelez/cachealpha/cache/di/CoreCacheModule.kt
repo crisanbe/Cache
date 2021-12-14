@@ -24,7 +24,7 @@ object CoreCacheModule {
     }
 
     @Provides
-    @Named("db_dao_core")
+    @Named("db_dao_cache")
     fun provideCacheDao(db: CacheDatabase): CoreCacheDao {
         return db.cacheDao()
     }
