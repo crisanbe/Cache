@@ -34,4 +34,9 @@ object CoreCacheModule {
     fun provideCacheRepository(db: CacheDatabase): CoreCacheRepository {
         return CoreCacheRepositoryImpl(db.cacheDao())
     }
+    @Provides
+    @Singleton
+    @Named("cache")
+    fun provideTetCache() = "Funciona cache"
+
 }
