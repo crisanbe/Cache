@@ -30,7 +30,7 @@ object CoreCacheModule {
         return db.cacheDao()
     }
 
-    @Binds
+    @Provides
     @Singleton
     fun provideCacheRepository(db: CacheDatabase): CoreCacheRepository {
         return CoreCacheRepositoryImpl(db.cacheDao())
